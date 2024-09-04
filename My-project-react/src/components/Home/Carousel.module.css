@@ -1,0 +1,55 @@
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 50%; 
+  margin: 20px auto; 
+}
+.carousel-slide {
+  position: relative;
+  text-align: center;
+}
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ max-width: 100%; 
+  width: 100%; 
+  height: 50vh;
+  background-color: #f4f4f4; 
+}
+
+.carouselContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease-in-out;
+  text-align: center; 
+}
+
+.carouselImageWrapper {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.carouselImage {
+  margin-top: 100px;
+  width: 70%;
+  height: auto;
+  border-radius: 8px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.description {
+  margin-top: 20px; /* Add space between image and description */
+  font-size: 24px;
+  color: #0a0a0a;
+  text-align: center;
+}
+
+
+

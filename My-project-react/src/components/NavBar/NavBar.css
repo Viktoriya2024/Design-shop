@@ -1,0 +1,45 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+   padding: 1rem;
+   z-index: 1000;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #333;
+    padding: 10px;
+  }
+  h1{
+    color: aqua;
+  }
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar ul li {
+    display: inline;
+  }
+  
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .navbar ul li a:hover {
+    background-color: #555;
+  }
+
+.navbar a:hover {
+    background-color: #555; /* Background color on hover */
+    color: #fff;
+  }
+  .navbar li {
+    margin-right: 80px; /* Adds space between each item */
+  }
