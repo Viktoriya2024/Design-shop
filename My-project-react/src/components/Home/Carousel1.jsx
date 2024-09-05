@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import styles from "./Carousel.module.css";
+import React, { useState, useEffect } from "react";
+import "./Carousel.css";
 import Picture1 from "../pictures/Picture1.jpg";
 import Picture2 from "../pictures/Picture3.jpg";
 import Picture3 from "../pictures/Picture2.jpg";
+import { NavLink } from "react-router-dom";
 
 const images = [
   {
@@ -36,42 +37,34 @@ function Carousel1() {
   };
 
   return (
-    <div className={styles["carousel-container"]}>
-      <div className={styles.carousel}>
-        <button
-          onClick={handlePrev}
-          className={`${styles["navButton"]} ${styles["prev"]}`}
-        >
+    <div className="carousel-container">
+      <div className="carousel">
+        <button onClick={handlePrev} className="navButton, prev">
           ❮
         </button>
-        <div className={styles["carouselContent"]}>
-          <div className={styles["carouselImageWrapper"]}>
+        <div className="carouselContent">
+          <div className="carouselImageWrapper">
             <img
               src={images[currentIndex].src}
               alt={`Slide ${currentIndex + 1}`}
-              className={styles["carouselImage"]}
+              className="carouselImage"
             />
           </div>
-          <div className={styles["dots"]}>
+          <div className="dots">
             {images.map((_, index) => (
               <span
                 key={index}
-                className={`${styles["dot"]} ${
-                  currentIndex === index ? styles["activeDot"] : ""
-                }`}
+                className={`dot ${currentIndex === index ? "activeDot" : ""}`}
                 onClick={() => setCurrentIndex(index)}
               ></span>
             ))}
           </div>
         </div>
-        <button
-          onClick={handleNext}
-          className={`${styles["navButton"]} ${styles["next"]}`}
-        >
+        <button onClick={handleNext} className="navButton,next">
           ❯
         </button>
       </div>
-      <div className={styles["description"]}>
+      <div className="description">
         <h2>
           {images[currentIndex].description.split("\n").map((text, index) => (
             <React.Fragment key={index}>
@@ -84,6 +77,11 @@ function Carousel1() {
           Detailed information about the selected design feature, including any
           additional context or description you want to add here.
         </p>
+        <div className="details">
+          <button className="active-button">
+            <NavLink to="decoration">More Details</NavLink>
+          </button>
+        </div>
       </div>
     </div>
   );

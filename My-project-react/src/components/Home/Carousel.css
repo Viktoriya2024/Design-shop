@@ -1,3 +1,4 @@
+
 .carousel {
   position: relative;
   display: flex;
@@ -45,11 +46,19 @@
 }
 
 .description {
-  margin-top: 20px; /* Add space between image and description */
+  margin-top: 20px;
   font-size: 24px;
   color: #0a0a0a;
   text-align: center;
 }
+.details{
+  margin-top: 20px;
+  font-size: 24px;
+  color: #0a0a0a;
+  text-align: center;
 
-
-
+}
+.active-button:hover{
+  background-color: red;
+  color: white;
+}
