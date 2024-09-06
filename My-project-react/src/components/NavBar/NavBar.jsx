@@ -5,25 +5,47 @@ import "./NavBar.css";
 function NavBar() {
   return (
     <nav className="navbar">
-      <h1>Design your interior</h1>
+      <h1>Design Stidio</h1>
       <ul>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink className="btn" to="/">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>Home
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/decoration">About Us</NavLink>
+          <NavLink className="btn" to="/decoration">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>About Us
+          </NavLink>
         </li>
         <li>
-          <NavLink to="login">Login</NavLink>
+          <NavLink className="btn" to="/authentocation">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>Request{" "}
+          </NavLink>
         </li>
         <li>
-          <NavLink to="authentocation">Registration</NavLink>
+          <NavLink className="btn" to="/products">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>Our Products
+          </NavLink>
         </li>
         <li>
-          <NavLink to="products">Our Products</NavLink>
-        </li>
-        <li>
-          <NavLink to="Basket">Basket</NavLink>
+          <NavLink className="btn" to="/basket">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>Basket
+          </NavLink>
         </li>
       </ul>
     </nav>

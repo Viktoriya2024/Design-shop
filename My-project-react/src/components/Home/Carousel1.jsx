@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Carousel.css";
 import Picture1 from "../pictures/Picture1.jpg";
 import Picture2 from "../pictures/Picture3.jpg";
@@ -79,7 +79,7 @@ function Carousel1() {
         </p>
         <div className="details">
           <button className="active-button">
-            <NavLink to="decoration">More Details</NavLink>
+            <NavLink to="/decoration">More Details</NavLink>
           </button>
         </div>
       </div>
