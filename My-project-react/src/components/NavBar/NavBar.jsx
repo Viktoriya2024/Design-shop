@@ -1,11 +1,32 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
+import { useState } from "react";
 
 function NavBar() {
+  const [isAnimating, setIsAnimating] = useState(true);
+
+  const toggleAnimation = () => {
+    setIsAnimating(!isAnimating);
+  };
   return (
     <nav className="navbar">
-      <h1>Design Stidio</h1>
+      <ul className={`item ${!isAnimating ? "stop-animation" : ""}`}>
+        <li>D</li>
+        <li>e</li>
+        <li>s</li>
+        <li>i</li>
+        <li>g</li>
+        <li>n</li>
+        <li></li>
+        <li>S</li>
+        <li>t</li>
+        <li>u</li>
+        <li>d</li>
+        <li>i</li>
+        <li>o</li>
+      </ul>
+      <button onClick={toggleAnimation}>Toggle Animation</button>
       <ul>
         <li>
           <NavLink className="btn" to="/">

@@ -43,7 +43,7 @@ function Authentication() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="registration-form">
-          <h1 className="form-title">REQUEST</h1>
+          <h2 className="form-title">REQUEST</h2>
 
           <label htmlFor="name">Name</label>
           <input
