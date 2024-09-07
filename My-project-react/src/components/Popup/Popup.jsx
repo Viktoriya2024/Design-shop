@@ -1,16 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Popup.css";
 import { useNavigate } from "react-router-dom";
 import DesignPro from "../pictures/designProject.jpg";
 import Renovation from "../pictures/renovation.jpg";
 import Furniture from "../pictures/furniture.jpg";
+import { RequestContext } from "../../contexts/RequestContext";
 
 const Popup = () => {
+  const { discount, setDiscount } = useContext(RequestContext)
+
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState(1);
   const navigate = useNavigate();
+  const [ task, setTask ] = useState("")
+
   const [city, setCity] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
+  const updateTask = ({ target }) => {
+    target = target.closest("[data-task]")
+    setTask(target.dataset.task )
+  }
 
   const handleNext = () => {
     if (city.trim() === "") {
@@ -18,6 +28,7 @@ const Popup = () => {
     } else {
       setErrorMessage("");
       navigate("/authentocation");
+      setDiscount({ city, task })
     }
   };
 
@@ -78,15 +89,27 @@ const Popup = () => {
               <div className="step-two">
                 <h3>Which task is closer to your request?</h3>
                 <div className="options">
-                  <div className="option">
+                  <div
+                    className="option"
+                    onClick={updateTask}
+                    data-task="design"
+                  >
                     <img src={DesignPro} alt="Option 1" />
                     <p>Develop a design project</p>
                   </div>
-                  <div className="option">
+                  <div
+                    className="option"
+                    onClick={updateTask}
+                    data-task="renovation"
+                  >
                     <img src={Renovation} alt="Option 2" />
                     <p>Refresh renovation</p>
                   </div>
-                  <div className="option">
+                  <div
+                    className="option"
+                    onClick={updateTask}
+                    data-task="decor"
+                  >
                     <img src={Furniture} alt="Option 3" />
                     <p>New furniture and decor</p>
                   </div>
