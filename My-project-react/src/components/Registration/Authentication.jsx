@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { RequestContext } from "../../contexts/RequestContext";
 import "./registration.css";
 
 function Authentication() {
-  const [formData, setFormData] = useState({
-    name: "",
-    telephone: "",
-    email: "",
-    favor: "design project",
-    comment: "",
-    privacyPolicy: false,
-  });
+  const { request, setRequest } = useContext(RequestContext)
+  const [formData, setFormData] = useState(request);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -18,7 +13,9 @@ function Authentication() {
       [name]: type === "checkbox" ? checked : value,
     });
   };
+
   const [submitted, setSubmitted] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
@@ -28,6 +25,7 @@ function Authentication() {
       formData.privacyPolicy
     ) {
       setSubmitted(true);
+      setRequest(formData)
       console.log("Form Data Submitted:", formData);
     } else {
       alert("Please fill all fields and accept the privacy policy.");

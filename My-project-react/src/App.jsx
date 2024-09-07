@@ -6,10 +6,11 @@ import Basket from "./components/Basket";
 import Product from "./components/Product";
 import Decoration from "./components/About us/Decoration.jsx";
 import Popup from "./components/Popup/Popup.jsx";
+import { RequestProvider } from "./contexts/RequestContext.jsx";
 
 function App() {
   return (
-    <>
+    <RequestProvider>
       <NavBar />
 
       <Routes>
@@ -21,7 +22,7 @@ function App() {
         <Route path="/products" element={<Product />} />
       </Routes>
       <Popup />
-    </>
+    </RequestProvider>
   );
 }
 
