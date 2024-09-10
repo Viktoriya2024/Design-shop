@@ -5,69 +5,42 @@ import { useState } from "react";
 
 function NavBar() {
   const [isAnimating, setIsAnimating] = useState(true);
-
+  const navItems = [
+    { to: "/", text: "Home" },
+    { to: "/decoration", text: "About Us" },
+    { to: "/authentocation", text: "Request" },
+    { to: "/products", text: "Our Products" },
+    { to: "/basket", text: "Basket" },
+  ];
   const toggleAnimation = () => {
     setIsAnimating(!isAnimating);
   };
   return (
     <nav className="navbar">
-      <ul className={`item ${!isAnimating ? "stop-animation" : ""}`}>
-        <li>D</li>
-        <li>e</li>
-        <li>s</li>
-        <li>i</li>
-        <li>g</li>
-        <li>n</li>
-        <li></li>
-        <li>S</li>
-        <li>t</li>
-        <li>u</li>
-        <li>d</li>
-        <li>i</li>
-        <li>o</li>
+      <ul className="item">
+        {["D", "e", "s", "i", "g", "n", "S", "t", "u", "d", "i", "o"].map(
+          (letter, index) => (
+            <li key={index} className={!isAnimating ? "stop-animation" : ""}>
+              {letter}
+            </li>
+          )
+        )}
       </ul>
-      <button onClick={toggleAnimation}>Toggle Animation</button>
+      <button className="animation-button" onClick={toggleAnimation}>
+        Stop Animation
+      </button>
       <ul>
-        <li>
-          <NavLink className="btn" to="/">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className="btn" to="/decoration">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>About Us
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className="btn" to="/authentocation">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>Request{" "}
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className="btn" to="/products">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>Our Products
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className="btn" to="/basket">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>Basket
-          </NavLink>
-        </li>
+        {navItems.map((item, index) => (
+          <li key={index}>
+            <NavLink className="btn" to={item.to}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              {item.text}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   );

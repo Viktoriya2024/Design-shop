@@ -1,0 +1,39 @@
+
+.basket-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .basket-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #343a40;
+  }
+  
+  .basket-item {
+    margin-bottom: 10px;
+  }
+  
+  .basket-item button {
+    margin-left: 10px;
+  }
+  
+  .basket-summary {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  .basket-summary h4 {
+    margin: 5px 0;
+  }
+  
+  .basket-actions {
+    margin-top: 20px;
+  }
+  
+  .basket-actions button {
+    margin-right: 10px;
+  }
+  

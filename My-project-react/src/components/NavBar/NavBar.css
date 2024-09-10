@@ -70,7 +70,15 @@
   animation-delay: 0.8s;
 }
 .stop-animation {
-  animation: none;
+  animation: none !important;
+}
+.animation-button{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  font-size: 14px;
+
 }
   .btn:hover{
     color: rgb(84, 194, 238);
